@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn!</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 2em;
+            margin: 10px 0 10px 0;
+        }
+        #numDays{
+            display: none;
+        }
+        #dayOfWeek{
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+
+<div onclick="toggleNumDaysVisibility()" style="margin: auto 0 auto 0">
+    <p>Click to reveal</p>
+    <p id="month"></p>
+    <p id="numDays"></p>
+</div>
+
+<div style="margin: 100px 0">
+    <p>Click to reveal</p>
+    <p id="futureDate"></p>
+    <p id="dayOfWeek"></p>
+</div>
+
+<script type="text/javascript" src="controllerNumDays.js"></script>
+<script type="text/javascript" src="controllerFutureDays.js"></script>
+</body>
+</html>
