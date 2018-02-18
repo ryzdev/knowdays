@@ -17,7 +17,7 @@ const reset = () => {
   printAtId(field2, '')
 }
 
-const toggleAnswerOrReset = () => {
+const showAnswerOrReset = () => {
   if (!answerVisible) {
     printAtId(field2, daysOfTheWeek[randomFutureDate.getDay()])
     answerVisible = true
@@ -28,7 +28,7 @@ const toggleAnswerOrReset = () => {
 
 document.addEventListener('keydown', (event) => {
   if (event.keyCode === 32) {
-    toggleAnswerOrReset()
+    showAnswerOrReset()
   }
 })
 
