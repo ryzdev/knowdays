@@ -16,16 +16,25 @@ const monthDays = [
 const getRandom = (myList) => myList[Math.floor(Math.random() * myList.length)]
 const printAtId = (id, s) => document.getElementById(id).innerHTML = s
 
-const randomMonth = getRandom(monthDays)
-printAtId('month', randomMonth.month)
+const field1 = 'month'
+const field2 = 'numDays'
+let randomMonth
+let numDaysVisible
 
-let numDaysVisible = false
+const reset = () => {
+  randomMonth = getRandom(monthDays)
+  numDaysVisible = false
+  printAtId(field1, randomMonth.month)
+  printAtId(field2, '')
+}
 
 const showAnswerOrReset = () => {
-  if (numDaysVisible === false) {
-    printAtId('numDays', randomMonth.numberOfDays)
+  if (!numDaysVisible) {
+    printAtId(field2, randomMonth.numberOfDays)
     numDaysVisible = true
-  } else location.reload()
+  } else {
+    reset()
+  }
 }
 
 document.addEventListener('keydown', (event) => {
@@ -33,3 +42,5 @@ document.addEventListener('keydown', (event) => {
     showAnswerOrReset()
   }
 })
+
+reset()
